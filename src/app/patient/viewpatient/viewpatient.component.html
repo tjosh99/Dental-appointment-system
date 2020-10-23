@@ -1,0 +1,212 @@
+<app-navbar></app-navbar>
+<div class="container-fluid ml-5 mt-5">
+    <div class="row mt-5 ml-5 ">
+      <div class="col-lg-12 mt-1 ml-3 content">
+        <div class="container  ml-5 med">
+          <div class="col-lg-12 ml-4">
+          <div aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-info-circle"></i>&nbsp;Patient</li>
+            </ol>
+          </div>
+        </div>
+
+            <div class="card  mt-4 ml-5 ">
+                <div class="card-header font-weight-bold ">
+                    <button type="button" class="btn btn-primary asd"  routerLink="/viewpatient"><i class="fa fa-list-alt"></i>&nbsp;Patient List</button>
+                    <button type="button" class="btn btn-primary asd" routerLink="/addpatient"><i class="fa fa-plus"></i>&nbsp;Add Patient </button>
+                </div>
+                    <div class="card-body ">
+                      <form class="form-inline">
+                        <button class="btn btn-outline-success ">Search</button>
+                        <input   type="search" name="pat_id" id="pat_id" class="form-control mr-sm-2" aria-label="Search" placeholder="Patient ID">
+                      </form>
+                        <table class = "table table-hover">
+                          <thead class = "table-invese">
+                          
+                            <tr>
+                                <th>No</th>
+                                <th>Patient ID </th>
+                                
+                                <th>First Name </th>
+                                <th>Last Name </th>
+                                <th>Blood Type </th>
+                                <th>Age </th>
+                                <th>Sex </th>
+                                <th>Contact</th>
+                                
+                                <th>Birth Date </th>
+                                <th>&nbsp;  &nbsp; &nbsp;&nbsp; Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let p of pat; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td> {{ p.patient_id }} </td>
+                                
+                                <td> {{ p.pfname }} </td>
+                                <td> {{ p.plname }} </td>
+                                <td> {{ p.pbloodtype }} </td>
+                                <td> {{ p.page }} </td>
+                                <td> {{ p.psex }} </td>
+                                <td> {{ p.pcontact }} </td>
+                                
+                                <td> {{ p.pbdate }} </td>
+                                
+                                <td>
+                                  <button (click)="showpatient(i)" class="btn btn-info" data-toggle="modal" data-target="#view"><i class="fa fa-wrench">&nbsp;Edit</i></button>
+                                  <button  (click)="showpatient(i)" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalScrollable">
+                                    <i class="fa fa-trash-o">&nbsp;</i>Delete</button>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>   
+                        
+                        
+                    </div>
+                            <div class="card-footer">
+                              <div aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                          </div> 
+                </div>
+            </div>
+        </div>
+      </div>
+    </div> 
+
+
+
+              <div class="modal fade" id = "view" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title ">Edit Patient</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                          <div class="modal-body">
+                          <form action="" class="form-group">
+                              <div class="container">
+                                  <!-- <div class="p-1">
+                                    <label for="appointment_id">ID</label>
+                                      <input [(ngModel)]="patient_id" name= "patient_id" type="text" class="form-control " disabled>
+                                  </div> -->
+
+                                  <div class="p-1">
+                                    <label for="ptreatment_type">Treatment Type</label>
+                                    <input [(ngModel)]="ptreatment_type" name= "ptreatment_type" type="text" class="form-control">
+                                  </div>
+                                
+                              <div class="row">
+                                  <div class="col">
+                                      <div class="p-1">
+                                          <label for="pfname">First Name</label>
+                                          <input [(ngModel)]="pfname" name= "pfname" type="text" class="form-control ">
+                                      </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="p-1">
+                                        <label for="pmname">Middle Name</label>
+                                        <input [(ngModel)]="pmname" name= "pmname" type="text" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                      <div class="p-1">
+                                          <label for="plname">Last Name</label>
+                                          <input [(ngModel)]="plname" name= "plname" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                  
+                              </div>
+
+                              <div class="row">
+                                <div class="col">
+                                    <div class="p-1">
+                                        <label for="pst_add">Street</label>
+                                        <input [(ngModel)]="pst_add" name= "pst_add" type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="p-1">
+                                        <label for="pcity_add">City</label>
+                                        <input [(ngModel)]="pcity_add" name= "pcity_add" type="text" class="form-control">
+                                    </div>
+                                  </div>
+                                <div class="col">
+                                    <div class="p-1">
+                                        <label for="pprovi_add">Provice</label>
+                                        <input [(ngModel)]="pprovi_add" name= "pprovi_add" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                                  <div class="p-1">
+                                          <label for="page">Age</label>
+                                          <input [(ngModel)]="page" name= "page" type="number" class="form-control">
+                                  </div>
+                                  <div class="p-1">
+                                    <label for="psex">Sex</label>
+                                    <input [(ngModel)]="psex" name= "psex" type="text" class="form-control">
+                                  </div>
+                                  <div class="p-1">
+                                    <label for="pcontact">Contact</label>
+                                    <input [(ngModel)]="pcontact" name= "pcontact" type="number" class="form-control">
+                                  </div>
+                                  <div class="p-1">
+                                    <label for="pbloodtype">Blood Type</label>
+                                    <input [(ngModel)]="pbloodtype" name= "pbloodtype" type="text" class="form-control">
+                                </div>
+                                  <div class="p-1">
+                                      <label for="pbdate">Birth Date</label>
+                                      <input [(ngModel)]="pbdate" name= "pbdate" type="date" class="form-control">
+                                  </div>
+                              </div>        
+                          </form>
+                      </div>
+                    <div class="modal-footer text-center">
+                        <div class="container">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button (click)="updatepatient()" type="button" class="btn btn-primary"><i class="fa fa-check-square"></i>&nbsp;Save changes</button>     
+                        </div> 
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle"> Are you sure to delete appointment?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+          
+                <div class="modal-footer  text-center" >
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button  (click)="deletepatient()" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-trash-o">&nbsp;</i>Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+

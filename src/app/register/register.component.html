@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg col-12 ml-auto fixed-top py-2 header">
+    <a class="navbar-brand " >Dental Clinic Appointment</a>
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-7">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="adoctor_id">Doctor ID</label>
+                                    <input [(ngModel)]="adoctor_id" class="form-control py-2"  type="text" name="adoctor_id" id="adoctor_id" placeholder="Doctor ID"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="arole">Role</label>
+                                    <input [(ngModel)]="arole" class="form-control py-2"  type="text" name="arole" id="arole"/>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" for="ausername">Username</label>
+                            <input [(ngModel)]="ausername" class="form-control py-2"  type="text" name="ausername" id="ausername" placeholder="Username"/>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="apassword">Password</label>
+                                    <input [(ngModel)]="apassword" class="form-control py-2"  type="password" name="apassword" id="apassword" placeholder="Password"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4 mb-0">
+                            <button (click)="addaccounts()" class="btn btn-primary btn-block" > <i class="fa fa-check-square"></i>&nbsp;Create Account</button></div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="small"><a routerLink="/login">Have an account? Go to login</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

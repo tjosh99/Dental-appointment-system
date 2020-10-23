@@ -1,0 +1,36 @@
+.pagination{
+
+    padding-left: 800px;
+
+}
+
+.q{
+    padding-right: 15px;
+    font-weight:bold;
+}
+
+.w{
+    padding-right: 15px;
+    font-weight: bold;
+    background-color: #ffc107;
+    color: lighten($color: #ffffff, $amount: 0);
+}
+
+.e{
+    padding-right: 15px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: lighten($color: #ffffff, $amount: 0);
+}
+.r{
+    padding-right: 15px;
+    font-weight: bold;
+    background-color: #dc3545;
+    color: lighten($color: #ffffff, $amount: 0);
+}
+
+.breadcrumb{
+
+    font-weight: bold;
+    font-size: 30px;
+}

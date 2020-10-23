@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<div class="container-fluid ml-5 mt-5">
+    <div class="row mt-5 ml-5 ">
+        <div class="col-lg-12 mt-1 ml-3 content">
+            <div class="container  ml-5 med">
+              <div class="col-lg-12 ml-4">
+              <div aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-info-circle"></i>&nbsp;Payment</li>
+                </ol>
+                
+              </div>
+            </div>
+
+                <div class="card  mt-4 ml-5 ">
+                    <div class="card-header font-weight-bold ">
+                        <button type="button" class="btn btn-primary asd"  routerLink="/viewpayment"><i class="fa fa-list-alt"></i>&nbsp;Payment List</button>
+                        <button type="button" class="btn btn-primary asd" routerLink="/addpayment"><i class="fa fa-plus"></i>&nbsp;Add Payment </button>
+                    </div>
+                    <div class="card-body ">
+                       
+                            <form class="form-inline">
+                                <button (click)="searchpayment()" class="btn btn-outline-success">Search</button>
+                                <input  [(ngModel)]="pay_id" type="search" name="pay_id" id="pay_id" class="form-control mr-sm-2" aria-label="Search" placeholder="Payment ID">
+                              </form>
+                            <br>
+                      
+
+                            <form ngNativeValidate>
+                                <div class="form-group col-lg-4">
+                                <label for="payment_id">Payment ID</label>
+                                <input [(ngModel)]="payment_id" class="form-control py-2 " required type="" name="payment_id" id="payment_id" placeholder="" />
+                                </div>
+
+                                <!-- <div class="form-group col-lg-4">
+                                <label for="pdate">Date</label>
+                                <input [(ngModel)]="pdate" class="form-control py-2" required type="datetime" name="pdate" id="pdate" placeholder="Date"/>
+                                </div> -->
+
+                                <div class="form-group col-lg-4">
+                                <label for="patient_name">Patient Name</label>
+                                <input [(ngModel)]="patient_name" class="form-control py-2" required type="text" name="patient_name" id="patient_name" placeholder="Patient Name"/>
+                                </div>
+
+                                <div class="form-group col-lg-4">
+                                <label for="doctor_name">Doctor Name</label>
+                                <input [(ngModel)]="doctor_name" class="form-control py-2" required type="text" name="doctor_name" id="doctor_name" placeholder="Doctor Name"/>
+                                </div>
+
+                                <div class="form-group col-lg-4">
+                                <label for="ptype">Treatment Type</label>
+                                <input [(ngModel)]="ptype" class="form-control py-2" required type="text" name="ptype" id="ptype" placeholder="Payment Type"/>
+                                </div>
+
+                                <div class="form-group col-lg-4">
+                                    <label for="treatment_price">Treatment Price</label>
+                                    <input [(ngModel)]="treatment_price" class="form-control py-2" required type="number + .00" name="treatment_price" id="treatment_price">
+                                </div>
+
+                                <div class="form-group col-lg-4">
+                                    <label for="pamount">Amount</label>
+                                    <input [(ngModel)]="pamount" class="form-control py-2" required type="number + .00" name="pamount" id="pamount" (keyup)="change1()">
+                                </div>
+
+                                <div class="form-group col-lg-4">
+                                        <label for="pchange">Change</label>
+                                        <input [(ngModel)]="change" class="form-control py-2" required type="number + .00" name="pchange" id="pchange"/>
+                                        </div>
+
+                            </form>
+                            </div>
+
+                            </div>
+
+                                <div class="card-footer text-center">
+                                    <div class="btn-group mb-0">
+                                        <button (click)="addpayment()"type="button" class="btn btn-primary " ><i class="fa fa-check-square"></i>&nbsp;Submit</button>
+
+                                    </div>
+                                </div> 
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          

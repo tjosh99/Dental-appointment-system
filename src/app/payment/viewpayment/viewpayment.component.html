@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="container-fluid ml-5 mt-5">
+  <div class="row mt-5 ml-5 ">
+    <div class="col-lg-12 mt-1 ml-3 content">
+      <div class="container  ml-5 med">
+        <div class="col-lg-12 ml-4">
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-info-circle"></i>&nbsp;Payment</li>
+          </ol>
+        </div>
+      </div>
+
+          <div class="card  mt-4 ml-5 ">
+              <div class="card-header font-weight-bold ">
+                  <button type="button" class="btn btn-primary asd"  routerLink="/viewpayment"><i class="fa fa-list-alt"></i>&nbsp;Payment List</button>
+                  <button type="button" class="btn btn-primary asd" routerLink="/addpayment"><i class="fa fa-plus"></i>&nbsp;Add Payment </button>
+              </div>
+                  <div class="card-body ">
+                    <form class="form-inline">
+                      <button class="btn btn-outline-success ">Search</button>
+                      <input   type="search" name="pat_id" id="pat_id" class="form-control mr-sm-2" aria-label="Search" placeholder="Payment ID">
+                    </form>
+                      <table class = "table table-hover">
+                        <thead class = "table-invese">
+                        
+                          <tr>
+                            <th>No</th>
+                            <th>Payment ID </th>
+                            <th>Patient Name </th>
+                            <th>Doctor Name </th>
+                            <th>Treatment Type </th>
+                            <th>Treatment Price </th>
+                            <th>Date </th>
+                            <th>Status</th>
+                            <th>Action </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of pay; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td> {{ p.payment_id }} </td>
+                            <td> {{ p.patient_name }} </td>
+                            <td> {{ p.doctor_name }} </td>
+                            <td> {{ p.ptype }} </td>
+                            <td> {{ p.treatment_price }} </td>
+                            <td> {{ p.pay_start }} </td>
+                            <td> {{ p.status }} </td>
+
+                              
+                              <td>
+                                  <button  class="btn btn-warning"><i class="fa fa-print">&nbsp;Print</i></button>
+                              </td>
+                          </tr>
+                      </tbody>
+                      </table>   
+                      
+                      
+                  </div>
+                  <div class="card-footer">
+                    <div aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                </div> 
+              </div>
+          </div>
+      </div>
+    </div>
+  </div> 

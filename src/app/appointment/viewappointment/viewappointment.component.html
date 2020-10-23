@@ -1,0 +1,198 @@
+<app-navbar></app-navbar>
+<div class="container col-lg-12 ml-5 mt-5">
+  <div class="row mt-5 ml-5 ">
+    <div class="col-lg-12 mt-1 ml-3 content">
+      <div class="container  ml-5 med">
+        <div class="col-lg-12 ml-4">
+          <div aria-label="breadcrumb">
+
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active wee" aria-current="page"><i
+                  class="fa fa-info-circle"></i>&nbsp;Appointment</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="card  mt-4 ml-5 ">
+          <div class="card-header font-weight-bold ">
+            <button type="button" class="btn btn-primary asd" routerLink="/viewappointment"><i
+                class="fa fa-list-alt"></i>&nbsp;Appointment List</button>
+            <button type="button" class="btn btn-primary asd" routerLink="/addappointment"><i
+                class="fa fa-plus"></i>&nbsp;Add Appointment </button>
+          </div>
+          <div class="card-body ">
+            <form class="form-inline">
+              <button class="btn btn-outline-success ">Search</button>
+              <input [(ngModel)]="app_id" type="search" name="app_id" id="app_id" class="form-control mr-sm-2"
+                aria-label="Search" placeholder="Appointment ID">
+            </form>
+            <table class="table table-hover">
+              <thead class="thead inverse">
+                <tr>
+                  <th> No</th>
+                  <!-- <th>Appointment ID</th> -->
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Patient</th>
+                  <th>Doctor</th>
+                  <th>Treatment_type</th>
+                  <th>Contact</th>
+                  <th>Status</th>
+
+                  <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let m of app; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <!-- <td>{{ m.appointment_id }}</td> -->
+                  <td>{{ m.app_date }}</td>
+                  <td>{{ m.app_time }}</td>
+                  <td>{{ m.patient_name }}</td>
+                  <td>{{ m.doctor_name }}</td>
+                  <td>{{ m.treatment_type }}</td>
+                  <td>{{ m.acontact }}</td>
+                  <td>{{ m.app_status }}</td>
+                  <td>
+                    <button (click)="showedit(i)" class="btn btn-info" data-toggle="modal" data-target="#view"><i
+                        class="fa fa-wrench">&nbsp;Edit</i></button>
+                    <button (click)="showedit(i)" class="btn btn-danger" data-toggle="modal"
+                      data-target="#exampleModalScrollable">
+                      <i class="fa fa-trash-o">&nbsp;</i>Delete</button>
+                    <!-- <button  class="btn btn-warning"><i class="fa fa-print"></i></button> -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+          </div>
+
+
+          <div class="card-footer">
+            <div class="countt text-center  ">
+              <table>
+
+                <thead class="thead inverse ml-auto ">
+                  <tr>
+                    <th>Total of Appointment</th> &nbsp;
+
+
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let c of count">
+                    <td>{{ c.appointment  }}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <div aria-label="Page navigation example">
+
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="view" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title ">Edit Appointment</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" class="form-group">
+          <div class="container">
+            <div class="p-1">
+              <!-- <label for="appointment_id">ID</label> -->
+              <input [(ngModel)]="appointment_id" name="appointment_id" type="hidden" class="form-control ">
+            </div>
+            <div class="p-1">
+              <label for="app_date">Date</label>
+              <input [(ngModel)]="app_date" name="app_date" type="date" class="form-control ">
+            </div>
+            <div class="p-1">
+              <label for="app_time">Time</label>
+              <input [(ngModel)]="app_time" name="app_time" type="text" class="form-control">
+            </div>
+            <div class="p-1">
+              <label for="patient_name">Patient Name</label>
+              <input [(ngModel)]="patient_name" name="patient_name" type="text" class="form-control">
+            </div>
+            <div class="p-1">
+              <label for="doctor_name">Doctor Name</label>
+              <input [(ngModel)]="doctor_name" name="doctor_name" type="text" class="form-control">
+            </div>
+            <div class="p-1">
+              <label for="treatment_type">Treatment Type</label>
+              <input [(ngModel)]="treatment_type" name="treatment_type" type="text" class="form-control">
+            </div>
+            <div class="p-1">
+              <label for="acontact">Contact</label>
+              <input [(ngModel)]="acontact" name="acontact" type="text" class="form-control">
+            </div>
+            <div class="p-1">
+              <label for="app_status">Status</label>
+              <input [(ngModel)]="app_status" name="app_status" type="text" class="form-control">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer text-center">
+        <div class="container">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)="updateappointment()" type="button" class="btn btn-primary"><i
+              class="fa fa-check-square"></i>&nbsp;Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle"> Are you sure to delete appointment?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-footer  text-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="deleteappointment()" class="btn btn-danger" data-dismiss="modal"><i
+            class="fa fa-trash-o">&nbsp;</i>Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

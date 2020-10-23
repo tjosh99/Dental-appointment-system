@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+<div class="container-fluid ml-5 mt-5">
+    <div class="row mt-5 ml-5 ">
+        <div class="col-lg-12 mt-1 ml-3 content">
+            <div class="container  ml-5 med">
+              <div class="col-lg-12 ml-4">
+              <div aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-info-circle"></i>&nbsp;Patient</li>
+                </ol>
+              </div>
+            </div>
+    
+                <div class="card  mt-4 ml-5 ">
+                        <div class="card-header font-weight-bold ">
+                          <button type="button" class="btn btn-primary asd"  routerLink="/viewpatient"><i class="fa fa-list-alt"></i>&nbsp;Patient List</button>
+                          <button type="button" class="btn btn-primary asd" routerLink="/addpatient"><i class="fa fa-plus"></i>&nbsp;Add Patient </button>
+                        </div>
+                    <div class="card-body ">
+                       
+                            <form class="form-inline">
+                                <button (click)='searchpatient()' class="btn btn-outline-success ">Search</button>
+                                <input  [(ngModel)]="pat_id" type="search" name="pat_id" id="pat_id" class="form-control mr-sm-2" aria-label="Search" placeholder="Appointment ID">
+                              </form>
+                            <br>
+                                    
+                                            <form>
+                                                
+                                                <div class="form-group col-lg-4">
+                                                <label for="patient_id">Patient ID</label>
+                                                <input [(ngModel)]="patient_id" class="form-control  "  type="" name="patient_id" id="patient_id" placeholder="Ex. 100001"/>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group col-lg-12 ">
+                                                            <label for="pfname" >First Name &nbsp;&nbsp;</label>
+                                                            <input [(ngModel)]="pfname" class="form-control " type="text" id="pfname" name="pfname" placeholder="First Name" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">   
+                                                        <div class="form-group col-lg-12 ">
+                                                            <label for="pmname">Middle Name</label>
+                                                            <input [(ngModel)]="pmname" class="form-control "  type="text" name="pmname" id="pmname" placeholder="Middle Name"/>
+                                                        </div>
+                                                    </div>
+                                                       
+                                                    <div class="col">   
+                                                        <div class="form-group col-lg-12 ">
+                                                            <label for="plname" >Last Name &nbsp;&nbsp;</label>
+                                                            <input [(ngModel)]="plname" class="form-control " type="text" id="plname" name="plname"  placeholder="Last Name"/>
+                                                        </div>                            
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group col-lg-12">
+                                                            <label for="pst_add">Street</label>
+                                                            <input [(ngModel)]="pst_add" class="form-control "  type="text" name="pst_add" id="pst_add" placeholder="Street"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col">   
+                                                        <div class="form-group col-lg-12">
+                                                            <label for="pcity_add">City</label>
+                                                            <input [(ngModel)]="pcity_add" class="form-control "  type="text" name="pcity_add" id="pcity_add" placeholder="City"/>
+                                                        </div>
+                                                    </div>
+                                                       
+                                                    <div class="col">   
+                                                        <div class="form-group col-lg-12">
+                                                            <label for="pprovi_add">Province</label>
+                                                            <input [(ngModel)]="pprovi_add" class="form-control "  type="text" name="pprovi_add" id="pprovi_add" placeholder="Province"/>
+                                                        </div>                           
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group col-lg-4">
+                                                    <label for="ptreatment_type">Treatment Type</label>
+                                                    <input [(ngModel)]="ptreatment_type" class="form-control py-2"  type="text" name="ptreatment_type" id="ptreatment_type" placeholder="Treatment Type"/>
+                                                </div>
+                    
+                                                <div class="form-group col-lg-4">
+                                                <label for="pcontact">Contact No.</label>
+                                                <input [(ngModel)]="pcontact" class="form-control py-2"  type="text" name="pcontact" id="pcontact" placeholder="Contact No"/>
+                                                </div>
+                        
+                                                <div class="form-group col-lg-4">
+                                                <label for="page">Age</label>
+                                                <input [(ngModel)]="page" class="form-control py-2"  type="text" name="page" id="page" placeholder="Age"/>
+                                                </div>
+                        
+                                                <div class="form-group col-lg-4">
+                                                <label for="psex">Sex</label>
+                                                <select [(ngModel)]="psex" class="form-control py-2"  type="text" name="psex" id="psex">
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                                </div>
+
+                                                <div class="form-group col-lg-4">
+                                                <label for="pbloodtype">Blood Type</label>
+                                                <select [(ngModel)]="pbloodtype" class="form-control py-2"  type="text" name="pbloodtype" id="pbloodtype"   >
+                                                <option>A-</option>
+                                                <option>A+</option>
+                                                <option>AB-</option>
+                                                <option>AB+</option>
+                                                <option>B-</option>
+                                                <option>B+</option>
+                                                <option>O</option>
+                                                </select>
+                                                </div>
+                            
+                                                <div class="form-group col-lg-4">
+                                                <label for="pbdate">Birth Date</label>
+                                                <input [(ngModel)]="pbdate" class="form-control py-2"  type="date" name="pbdate" id="pbdate" />
+                                                </div>
+                    
+                                                    
+                        
+                                               
+                        
+                                            </form>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <div class="btn-group mb-0">
+                                                <!-- <button type="button" class="btn btn-danger" >Retrieved Patient</button> -->
+                                                <button (click)='addpatient()' type="button" class="btn btn-primary " ><i class="fa fa-check-square"></i>&nbsp;Save Patient</button>
+                                                
+
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                </div>  
+        </div>      
+    </div>  
+   
